@@ -1,7 +1,7 @@
 #include <stdio.h> 
 #include <stdlib.h> 
 #include <string.h> 
-#define N 3 
+#define N 3
 #define MAX_STRLEN 30 
  
  
@@ -33,7 +33,7 @@
     ordinamento(studente); 
       
     for(i=0;i<N;i++) { 
-        printf("\n%s, %s, %d, %s", studente[i].nome, studente[i].cognome, studente[i].eta, studente[i].classe); 
+        printf("\n%d | %s; %s; %d; %s;", i+1, studente[i].nome, studente[i].cognome, studente[i].eta, studente[i].classe); 
     } 
       
     return (EXIT_SUCCESS); 
@@ -45,7 +45,7 @@ void ordinamento(s_studente) {
      for(i=0;i<N-1;i++) { 
          indiceMin = i; 
           
-         for(z=i+1;j<N;z++) { 
+         for(z=i+1;z<N;z++) { 
              if((strcmp(studente[z].cognome, studente[indiceMin].cognome))<0) 
                  indiceMin = z; 
          } 
@@ -53,7 +53,7 @@ void ordinamento(s_studente) {
          if(i!=indiceMin) { 
              strcpy(temp.cognome, studente[i].cognome); 
              strcpy(studente[i].cognome, studente[indiceMin].cognome); 
-             strcpy(studente[indiceMin].cognome, temp.cognome) 
+             strcpy(studente[indiceMin].cognome, temp.cognome);
              strcpy(temp.nome, studente[i].nome); 
              strcpy(studente[i].nome, studente[indiceMin].nome); 
              strcpy(studente[indiceMin].nome, temp.nome);
@@ -66,4 +66,3 @@ void ordinamento(s_studente) {
          } 
      } 
  } 
-
